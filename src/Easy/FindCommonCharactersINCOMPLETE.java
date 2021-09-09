@@ -28,8 +28,13 @@ public class FindCommonCharactersINCOMPLETE {
     }
     List<String> returnList = new ArrayList<>();
     for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
-      if (entry.getValue() == words.length) {
-        returnList.add(entry.getKey().toString());
+      int count = entry.getValue() % words.length;
+      if (count == 0) {
+        int i = entry.getValue() / words.length; // doesn't work for ["cool","lock","cook"]
+        while(i > 0) {
+          returnList.add(entry.getKey().toString());
+          i--;
+        }
       }
     }
     return returnList;
