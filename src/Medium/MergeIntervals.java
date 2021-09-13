@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class MergeIntervals {
   public int[][] merge(int[][] intervals) {
-    Arrays.sort(intervals, m m(a, b) -> Integer.compare(a[0], b[0]));
+    Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
     LinkedList<int[]> merged = new LinkedList<>();
     for (int[] interval : intervals) {
       // if the list of merged intervals is empty or if the current

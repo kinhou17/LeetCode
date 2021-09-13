@@ -24,7 +24,7 @@ class FindingPairsWithACertainSum {
     map.put(nums2[index], map.get(nums2[index]) - 1);
     nums2[index] += val;
     map.put(nums2[index], map.getOrDefault(nums2[index], 0) + 1);
-  }m
+  }
 
   public int count(int tot) {
     int result =0;
