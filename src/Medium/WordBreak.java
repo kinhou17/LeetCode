@@ -1,5 +1,9 @@
 package Medium;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  *
  Given a string s and a dictionary of strings wordDict, return true if s can be segmented into a space-separated sequence of one or more dictionary words.
