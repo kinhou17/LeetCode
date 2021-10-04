@@ -5,23 +5,27 @@ package Medium;
  */
 
 public class RemoveNthFromEnd {
-
+  // time: O(n)
+  // space: O(1)
   public ListNode removeNthFromEnd(ListNode head, int n) {
-    ListNode start = new ListNode(0);
+    // initialize 2 pointers
+    ListNode start = new ListNode();
     start.next = head;
-    ListNode slow = start;
-    ListNode fast = start;
-
-    for (int i = 1; i <= n + 1; i++) {
-      fast = fast.next;
+    ListNode first = start;
+    ListNode second = start;
+    // iterate 1 until n
+    while (n > 0 && first != null) {
+      first = first.next;
+      n--;
     }
-
-    while (fast != null) {
-      slow = slow.next;
-      fast = fast.next;
+    // iterate both unitl first hits end
+    while (first.next != null) {
+      first = first.next;
+      second = second.next;
     }
+    // remove nth node
+    second.next = second.next.next;
 
-    slow.next = slow.next.next;
     return start.next;
   }
 }
